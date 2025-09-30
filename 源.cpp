@@ -86,4 +86,68 @@ int main(void) {
 	printf("\n输入第二件商品价格:");
 	scanf_s("%d", &b);
 	printf("\n总金额%d", a + b);
+}
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main(void) {
+	float score;
+	printf("输入学生成绩: ");
+	if (scanf_s("%f", &score) != 1) {        
+		printf("输入格式错误！\n");
+		return 1;
+	}
+
+	if (score >= 60.0)                        
+		printf("合格\n");
+	else
+		printf("不合格\n");
+
+	return 0;
+}
+int main(void) {
+	float sc;
+	printf("输入分数:");
+	scanf_s("%f", &sc);
+	if (sc >= 60.0)
+		printf("\n合格");
+	else
+		printf("\n不合格");
+	return 0;
+}
+int main(void) {//以不同形式表现变量
+	int num1;
+	char num2;
+	num1 = 'a';
+	num2 = 109;
+	num1 = num1 + 22;
+	num2 = num2 - 33;
+	printf("%c,%c\n", num1, num2);
+	printf("%d,%d\n", num1, num2);
+	return 0;
+}
+#include <stdio.h>
+
+int main(void)
+{
+	int a, b, c;
+	int max;                
+
+	printf("请输入三个整数（用空格或回车分隔）: ");
+	if (scanf_s("%d %d %d", &a, &b, &c) != 3) {   
+		printf("输入格式错误！\n");
+		return 0;
+	}
+
+	
+	max = a;
+	if (b > max) max = b;
+	if (c > max) max = c;
+
+	printf("最大数是: %d\n", max);
+	return 0;
 }*/
+
+
+
+
