@@ -1,5 +1,4 @@
-#include <stdio.h>
-/*int m;
+/*int m;//比较大小
 int min(int x, int y);
 int main()
 {
@@ -17,7 +16,7 @@ int min(int x, int y)
 	return(t);
 }
 #define pi  3.14159
-int main(void){
+int main(void){//算面积
 	float r,c,s;
 	printf("\n输入半径r:");
 	scanf_s("%f", &r);
@@ -79,7 +78,7 @@ int main() {
 
 
 }
-int main(void) {
+int main(void) {//加法运算
 	int a, b;
 	printf("输入第一件商品价格:");
 	scanf_s("%d", &a);
@@ -90,7 +89,7 @@ int main(void) {
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-int main(void) {
+int main(void) {//合格与否
 	float score;
 	printf("输入学生成绩: ");
 	if (scanf_s("%f", &score) != 1) {        
@@ -115,7 +114,7 @@ int main(void) {
 		printf("\n不合格");
 	return 0;
 }
-int main(void) {//以不同形式表现变量
+int main(void) {//以不同形式表现变量//比大小
 	int num1;
 	char num2;
 	num1 = 'a';
@@ -146,7 +145,469 @@ int main(void)
 
 	printf("最大数是: %d\n", max);
 	return 0;
+}
+#include <stdio.h>//鸡兔同笼
+#include <stdlib.h>
+int main() {
+	int x, y, m, n;
+	scanf_s("%d,%d", &x, &y);
+	m = (4 * y - x) / 2;
+    n = (x - 2 * y) / 2;
+	printf("鸡有：%d 兔有：%d\n", m, n);
+	return 0;
+}
+int main() {//输入输出
+	char ch1, ch2, ch3, ch4, ch5;
+	printf("输入:");
+	ch1 = getchar();
+	ch2 = getchar();
+	ch3 = getchar();
+	ch4 = getchar();
+	ch5 = getchar();
+	printf("\n输出:");
+	putchar(ch1);
+	putchar(ch2);
+	putchar(ch3);
+	putchar(ch4);
+	putchar(ch5);
+	return 0;
+
+}
+
+#include<stdio.h> //数列
+#include <math.h>
+int main() {
+	int n;
+	printf("输入n的值:");
+	scanf_s("%d", &n);
+	int t;
+	t = (2 * n) - 1;
+	printf("结果=%d", t);
+	return 0;
+}
+#include <stdio.h> //鸡兔同笼
+#include <stdlib.h>
+int main() {
+	int n = 0, m = 0;
+	printf("头几个,脚几只：");
+	if (scanf_s("%d,%d", &n, &m) != 2) {
+		printf("输入格式错误\n");
+		return 1;
+	}
+
+	if ((4 * n - m) % 2 == 0 && (m - 2 * n) % 2 == 0) {
+		int x = (4 * n - m) / 2;  
+		int y = (m - 2 * n) / 2;  
+
+		if (x >= 0 && y >= 0) {
+			printf("鸡有%d只，兔有%d只\n", x, y);
+		}
+		else {
+			printf("无解（负数）\n");
+		}
+	}
+	else {
+		printf("输入错误（无整数解）\n");
+	}
+
+	return 0;
+}
+#include <stdio.h>
+int main() {
+	int a = 0, b = 0;
+	printf("a,b=");
+	scanf_s("%d,%d", &a, &b);
+	printf("a=%c,b=%c\n",a,b);
+	return 0;
+}
+#include <stdio.h> //时间
+#include<time.h>
+int main() {
+	time_t t = time(NULL);
+	char buf[26];
+	if (ctime_s(buf, sizeof(buf), &t) == 0)
+		printf("%s", buf);
+	else
+		printf("ctime_s 失败\n");
+	return  0;
+}
+#include<stdio.h> //对齐输出
+int main() {
+	int a, b, c;
+	if (scanf_s("%d,%d,%d", &a, &b, &c) != 3)
+		return 0;
+	printf("%8d,%8d,%8d", a, b, c);
+	return 0;
+}
+#include <stdio.h>//逆序输出
+int main() {
+	int a = 0;
+	scanf_s("%d", &a);
+	printf("%d%d%d", a%10, (a/10)%10, a/100);
+	return 0;
+}
+#include <stdio.h>//限制位数
+int main() {
+	float a = 0;
+	scanf_s("%f", &a);
+	printf("%.3f", a * a);
+	return 0;
+}
+#include <stdio.h>//随机数
+#include <stdlib.h>
+#include <time.h>
+int main() {
+	int rnd;
+	srand(time(NULL));
+	rnd = rand() % 100;
+	printf("%d", rnd);
+	return 0;
+}
+#include <stdio.h>//加法
+int main() {
+	int a, b;
+	printf("输入两个数字：\n");
+	scanf_s("%d %d", &a, &b);
+	int c = a + b;
+	printf("和为：%d", c);
+}
+#include <stdio.h>//随机数判断闰年
+#include <stdlib.h>
+#include <time.h>
+int main() {
+	int rnd;
+	srand(time(NULL));
+	rnd = rand() % 9999;
+	printf("year=%d\n", rnd);
+	if (rnd % 4 == 0 && rnd / 2 != 0)
+		printf("yes");
+	else(printf("no"));
+	return 0;
+}
+#include<stdio.h>//评分系统
+#include<stdlib.h>
+int main() {
+	int g;
+	printf(" input stdunt grade : ");
+	scanf_s("%d", &g);
+	if (g < 0 || g>100)
+		printf("mistake input");
+	else if (g >= 90)
+		printf("A");
+	else if (g >= 80)
+		printf("B");
+	else if (g >= 70)
+		printf("C");
+	else if (g >= 60)
+		printf("D");
+	else(printf("not pass"));
+	return 0;
+}
+#include<stdio.h>//简单的if嵌套
+int main() {
+	int N;
+	printf("input number");
+	scanf_s("%d", &N);
+	if (N > 0)
+		printf("positive");
+	else if (N < 0)
+		printf("negative");
+	else printf("zero");
+	return 0;
+}
+#include<stdio.h>//检查整除
+int main() {
+	int n;
+	printf("input:");
+	scanf_s("%d", &n);
+	if (n % 5 == 0 && n % 6 == 0)
+		printf("yes");
+	else printf("no");
+	return 0;
+}
+#include<stdio.h>
+int main() {
+	int x;
+	printf("input:");
+	scanf_s("%d", &x);
+	if (x / 10 >= 10 && x % 11 == 0)
+		printf("yes");
+	else printf("no");
+	return 0;
+}
+#include<stdio.h>
+int main() {
+	int a, b;
+	char op;
+	double re=0;
+	printf("input:");
+	scanf_s("%d %c %d", &a, &op, &b);
+	switch (op) {
+	case '+':
+		re = a + b;
+		printf("re=%.2f\n", re);
+		break;
+	case '-':
+		re = a - b;
+		printf("re=%.2f\n", re);
+		break;
+	case '*':
+		re = a * b;
+		printf("re=%.2f\n", re);
+		break;
+	case '/':
+		if (b == 0)
+			printf("mistake\n");
+		else re = a / b;
+			printf("re=%.2f\n", re);
+			break;
+	}
+	return 0;
+}
+
+#include<stdio.h>//判断有几个相同数字
+int main() {
+	int x, y;
+	int c = 0;
+	printf("input:");
+	scanf_s("%d %d", &x,&y);
+	if (x  < 10000 || x  > 99999 || y > 10 || y < 1)
+	{
+		printf("mistake");
+		return 1;
+	}
+	int c1 = x / 10000;
+	int c2 = (x / 1000) % 10;
+	int c3 = (x / 100) % 10;
+	int c4 = (x / 10) % 10;
+	int c5 = x % 10;
+	c = (c1 == y) + (c2 == y) + (c3 == y) + (c4 == y) + (c5 == y);
+	printf("count=%d\n", c);
+	return 0;
+}
+#include <stdio.h>//计算器
+
+int main() {
+	int a, b;
+	char op;
+	double re = 0;
+
+	printf("input opration:\n");
+	scanf_s("%c", &op);
+	printf("input number:\n ");
+	scanf_s("%d %d", &a, &b);
+	
+
+	switch (op) {
+	case '+':
+		re = a + b;
+		printf("re=%.2f\n", re);
+		break;
+	case '-':
+		re = a - b;
+		printf("re=%.2f\n", re);
+		break;
+	case '*':
+		re = a * b;
+		printf("re=%.2f\n", re);
+		break;
+	case '/':
+		if (b == 0)
+			printf("mistake\n");
+		else {
+			re = (double)a / b;
+			printf("re=%.2f\n", re);
+		}
+		break;
+	default:
+		printf("miatake\n");
+	}
+
+	return 0;
+}
+#include<stdio.h>
+int main() {
+	int x;
+	double y = 0;
+	printf("input x");
+	scanf_s("%d", &x);
+	if (x < 0 || x>20)
+		printf("input error");
+	else if (x >= 0 && x <= 5)
+		y = -x + 2.5;
+	else if (x >= 5 && x <= 10)
+		y = 2 - 1.5 * (x - 3) * (x - 3);
+	else if (x >= 10 && x <= 20)
+		y = (x / 2) - 1.5;
+	printf("%.3f", y);
+	return 0;
+}
+#include<stdio.h>//while循环
+#include<stdlib.h>
+int main() {
+	int sum=0,i=1;
+	while (i <= 100) {
+		sum += i;
+		i++;
+	}
+	printf("sum=%d", sum);
+	return 0;
+}
+#include<stdio.h>//简单for循环
+int main() {
+	int sum = 0;
+	for (int i = 1; i <= 100; i++) {
+		sum += i;
+	}
+	printf("sum=%d", sum);
+	return 0;
+}
+#include<stdio.h>
+int main() {
+	int a,sum = 0;
+	scanf_s("%d", &a);
+	for (int x = a; x > 0; x = a /= 10) {
+		sum += a % 10;
+	}
+	printf("sum=%d", sum);
+	return 0;
+}
+#include<stdio.h>//等价while循环
+int main() {
+	int a, sum = 0;
+	scanf_s("%d", &a);
+	while (a > 0) {
+		sum += a % 10;
+		a /= 10;
+	}
+	printf("sum=%d", sum);
+	return 0;
+}
+#include<stdio.h>//continue和break的应用
+int main() {
+	int sum = 0;
+	for (int i = 1; i <= 100; i++) {
+		if (i == 100) {
+			break;
+		}
+		sum += i;
+	}
+	printf("sum=%d", sum);
+	return 0;
+}
+#include<stdio.h>//输入要比的数字行数后进行数字大小比较
+int main() {
+	int x = 0, y = 0, z = 0, line;
+	scanf_s("%d", &line);
+	while (line > 0) {
+		scanf_s("%d,%d,%d", &x, &y, &z);
+		int max = x > y ? (x > z ? x : z) : (y > z ? y : z);
+		printf("max is %d\n", max);
+		line--;
+	}
+	return 0;
+}
+#include<stdio.h>//判断素数
+int main() {
+	int x = 0, i = 2, isp = 1;
+	scanf_s("%d", &x);
+	while (i < x) {
+		if (x % i == 0) {
+			isp = 0;
+		}
+		i++;
+	}
+	if (isp) {
+		printf("%d is isp",x);
+	}
+	else {
+		printf("%d not isp",x);
+	}
+	return 0;
+}
+#include<stdio.h>//九九乘法表
+int main() {
+	int x = 1, y = 1;
+	printf("9*9 excel\n");
+	while (x <= 9) {
+		y = 1;
+		while (y < x) {
+			printf("%d\t", x * y);
+			y++;
+		}
+		printf("\n");
+		x++;
+	}
+	return 0;
+}
+#include <stdio.h> // 九九乘法表
+
+int main() {
+	printf("九九乘法表：\n");
+	for (int i = 1; i <= 9; i++) {
+		for (int j = 1; j <= i; j++) {
+			printf("%d*%d=%-2d\t", j, i, i * j);
+		}
+		printf("\n");
+	}
+	return 0;
+}
+#include <stdio.h>\//for循环计算1到300的和
+int main() {
+	int sum = 0;
+	for (int i = 1; i <= 300; i++) {
+		sum += i;
+	}
+	printf("sum=%d", sum);
+	return 0;
+}
+#include <stdio.h>//输出100以内的素数
+#include <math.h>
+int main() {
+	int i, j, isPrime;
+	printf("100以内的素数有：\n");
+	for (i = 2; i < 100; i++) {
+		isPrime = 1; 
+		for (j = 2; j <= sqrt(i); j++) {
+			if (i % j == 0) {
+				isPrime = 0; 
+				break; 
+			}
+		}
+		if (isPrime) {
+			printf("%d ", i);
+		}
+	}
+	printf("\n");
+	return 0;
+}
+#include<stdio.h>
+#include<math.h>
+int main() {
+	int isp;
+	for (int i = 2; i <= 100; i++) {
+		isp = 1;
+		for (int j = 2; j <= sqrt(i); j++) {
+			if (i % j == 0) {
+				isp = 0;
+				break;
+			}
+		}
+		if (isp) {
+			printf("%d ", i);
+		}
+	}
+	return 0;
 }*/
+
+
+
+
+
+
+
+
+
 
 
 
