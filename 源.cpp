@@ -598,7 +598,165 @@ int main() {
 		}
 	}
 	return 0;
+}
+#include<stdio.h>
+int main() {
+	int a, b, c;
+	printf("input three number:");
+	scanf_s("%d,%d,%d",&a,  &b, &c);
+	double sum = 0;
+	if (a > b) {
+		printf("error");
+	}
+	while (a <=b) {
+		sum = (a + c) ;
+		printf("sum=%.3f\n", sum);
+		a+=2;
+     }
+	return 0;
+}
+#include<stdio.h>//指针
+int main() {
+	int a = 3;
+	int* t = &a;
+	printf("%p %d\n", t, *t);
+}
+#include<stdio.h>
+int main(){
+	int a, b, d;
+	int c[3] = {a=0,b=0,d=0};
+	printf("input a,b,d:");
+	scanf_s("%d,%d,%d", &a, &b, &d);
+	int* p = c;
+	while (a < b) {
+		int sum = a + d;
+		printf("sum=%d\n", sum);
+		a++;
+	}
+	printf("%d,%d,%d", *(p), *(p + 1), *(p + 2));
+	return 0;
+}
+#include<stdio.h>//++x的使用
+int main() {
+	int a, s, n, count;
+	a = 2;
+	s = 0;
+	n = 1;
+	count = 1;
+	while (count <= 7) {
+		n = n * a;
+		s = s + n;
+		++count;
+		printf("s=%d\n", s);
+	}
+	return 0;
+}
+#include <stdio.h>//最大公约数
+
+int main() {
+	int m, n;
+
+	printf("请输入两个整数 m n：");
+	if (scanf_s("%d %d", &m, &n) != 2) {
+		printf("输入格式错误\n");
+		return 1;
+	}
+
+	if (m < 0) m = -m;
+	if (n < 0) n = -n;
+
+
+	if (m == 0 && n == 0) {
+		printf("gcd(0, 0) 未定义（约定为 0）\n");
+		return 0;
+	}
+
+	while (n != 0) {
+		int r = m % n;
+		m = n;
+		n = r;
+	}
+
+	printf("最大公约数为: %d\n", m);
+	return 0;
+}
+#include <stdio.h>//计算斐波那契数列
+
+int fib(int n) {
+	if (n <= 0) return 0;
+	if (n == 1 || n == 2) return 1;
+	int a = 1, b = 1, c;
+	for (int i = 3; i <= n; ++i) {
+		c = a + b;
+		a = b;
+		b = c;
+	}
+	return b;
+}
+
+int main(void) {
+	int n;
+	printf("请输入正整数 n（建议 n <= 46）：");
+	if (scanf_s("%d", &n) != 1) {
+		printf("输入格式错误\n");
+		return 1;
+	}
+	if (n < 0) {
+		printf("请输入非负整数\n");
+		return 1;
+	}
+	if (n > 46) {
+		printf("结果可能溢出（建议 n <= 46）。继续计算...\n");
+	}
+	printf("fib(%d) = %d\n", n, fib(n));
+	return 0;
+}
+#include <stdio.h>// FizzBuzz问题
+int main() {
+	for (int i = 1; i <= 100; i++) {
+		if (i % 3 == 0 && i % 5 == 0) {
+			printf("thive\n");
+		}
+		else if (i % 3 == 0) {
+			printf("three\n");
+		}
+		else if (i % 5 == 0) {
+			printf("five\n");
+		}
+		else {
+			printf("%d\n", i);
+		}
+	}
+	return 0;
+}
+#include<stdio.h>//计算1到10的阶乘
+int main() {
+	int n=1;
+	int fact = 1;
+	do {
+		fact*= n;
+		printf("%d!=%d\n", n,fact);
+		n++;
+	} while (n <= 10);
+	return 0;
+		
+}
+#include<stdio.h>//计算1到n的和，负数退出
+int main() {
+	int n;
+	while (1) {
+		printf("input n (负数退出)：");
+		if (scanf_s("%d", &n) != 1) break;
+		if (n < 0) break;
+		int sum = 0;
+		for (int i = 1; i <= n; i++) {
+			sum += i;
+		}
+		printf("1 到 %d 的和为：%d\n", n, sum);
+	}
+	return 0;
 }*/
+
 
 
 
